@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import mapStoreToProps from '../../redux/mapStoreToProps';
+import { connect } from 'react-redux';
 
 class App extends Component {
+  componentDidMount() {
+    this.props.dispatch({ type: 'GET_SAMPLE_API_CALL' });
+  }
+  
+
   render() {
     return (
       <div className="App">
@@ -25,4 +32,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(mapStoreToProps)(App);
