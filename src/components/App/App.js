@@ -8,6 +8,7 @@ class App extends Component {
   componentDidMount() {
     this.props.dispatch({ type: 'GET_SAMPLE_API_CALL' });
   }
+  
 
   render() {
     return (
