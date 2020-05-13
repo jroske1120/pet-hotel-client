@@ -10,9 +10,9 @@ var router = express_1.default.Router();
  * GET route template
  */
 router.get('/', function (req, res, next) {
-    var queryString = "INSERT INTO \"sample\" (\"cats\") VALUES ($1)";
+    var queryString = "SELECT * FROM \"owners\"";
     pool_1.default
-        .query(queryString, ['Gizmo'])
+        .query(queryString)
         .then(function (response) {
         res.send(response);
     })
