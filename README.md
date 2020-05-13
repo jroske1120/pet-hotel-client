@@ -1,68 +1,57 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Pet Hotel Project
 
-## Available Scripts
+> NOTE: __Do not fork this repository.__ Instead, create your own repository from scratch.
 
-In the project directory, you can run:
+Trello Board: https://trello.com/b/1mJRBCmZ/pet-hotel-weekend-project
 
-### `npm start`
+This Board has some tasks already defined, feel free to update as you see fit.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Objectives
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- build a full-stack application, writing the backend in a new language
+- utilize separate GitHub repositories for the client-side and server-side of an application
+- build confidence w/ SQL statements for CRUD and 1-M joins
 
-### `npm test`
+## Technology
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+We are replacing our Node/Express/PG server with TypeScript. Your RESTful API server needs to be able to route requests, respond, and talk to our PostGRES database.
 
-### `npm run build`
+## Client Side
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The client side should remain React, Redux, Redux Sagas as needed. 
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Add owners
+- Add pets
+- Remove owners if no pets are assigned
+- Remove pets
+- Check in / out a pet
+- Show total number of pet next to each owner
 
-### `npm run eject`
+### Wireframes
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### Dashboard View
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Add Entry Page](page-one.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### Manage Owners View
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![Add Entry Page](page-two.png)
 
-## Learn More
+### Database
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Start with two tables **pets** & **owners**. When base features are complete, add more tables as needed for stretch goals.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Documentation
 
-### Code Splitting
+Before moving on past Base features, please take time to comment your code and otherwise document what you've learned about your new server side technology stack. This will be great when you come back and reference this project later.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Other Features
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- Update pets and owners
+- Add login for admin & customers (all above functionality should be admin focused)
+- Keep track of visits (you may need another table or two for this)
+  - Allow customers to see a history of visits for their pets
+  - Allow customers to add/remove pets from a profile page
+- Add images for pets
