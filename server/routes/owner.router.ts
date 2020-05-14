@@ -7,22 +7,23 @@ const router: express.Router = express.Router();
 /**
  * GET ROUTE FOR GETTING OWNER
  */
-// router.get(
-//   '/',
-//   (req: Request, res: Response, next: express.NextFunction): void => {
-//     const queryString: string = `SELECT * FROM "owners"`;
+router.get(
+  '/',
+  (req: Request, res: Response, next: express.NextFunction): void => {
+    console.log( 'In GET on Owner router' );
+    const queryString: string = `SELECT * FROM "owners"`;
 
-//     pool
-//       .query(queryString)
-//       .then((response: any): void => {
-//         res.send(response);
-//       })
-//       .catch((err: string): void => {
-//         console.log(err);
-//         res.sendStatus(500);
-//       });
-//   }
-// );
+    pool
+      .query(queryString)
+      .then((response: any): void => {
+        res.send(response.rows);
+      })
+      .catch((err: string): void => {
+        console.log(err);
+        res.sendStatus(500);
+      });
+  }
+);
 
 /**
  * POST ROUTE FOR ADDING OWENER TO DATABSE

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import { connect } from 'react-redux';
+import './OwnerForm.css';
 
 class OwnerForm extends Component {
     state = {
