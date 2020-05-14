@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import templateRouter from './routes/template.router';
+import displayRouter from './routes/display.router'
 
 const app: express.Application = express();
 
@@ -10,6 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 /* Routes */
 app.use('/api/template', templateRouter);
+app.use('/api/display', displayRouter);
 
 // Serve static files
 app.use(express.static('build'));
