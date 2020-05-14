@@ -1,24 +1,34 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 //import components to be used on this page
 import DeletePetButton from '../Buttons/DeletePetButton';
+import { connect } from 'react-redux';
 
 class HistoryTableList extends Component {
+
   render() {
     return (
-        // Needs a map here to go over each item
-      <tbody>
-          <tr>
-              <td>Chris</td>
-              <td>Charlie</td>
-              <td>Shih-tzu</td>
-              <td>Black</td>
-              <td>No</td>
+      // Needs a map here to go over each item
+      <div>
+        {this.props.display.map(item =>
+          <tbody>
+            <tr>
+              <td>{item.owners_name}</td>
+              <td>{item.pets_name}</td>
+              <td>{item.breed}</td>
+              <td>{item.color}</td>
+              <td>true</td>
               <td><DeletePetButton /> | <button>Check In</button></td>
-          </tr>
-      </tbody>
+            </tr>
+          </tbody>
+        )}
+      </div>
     )
   }
 }
 
-export default HistoryTableList;
+const mapStoreToProps = (reduxStore) => ({
+  display: reduxStore.getDisplay
+})
+export default connect(mapStoreToProps)(HistoryTableList);
+

@@ -9,21 +9,19 @@ var router = express_1.default.Router();
 /**
  * GET ROUTE FOR GETTING OWNER
  */
-// router.get(
-//   '/',
-//   (req: Request, res: Response, next: express.NextFunction): void => {
-//     const queryString: string = `SELECT * FROM "owners"`;
-//     pool
-//       .query(queryString)
-//       .then((response: any): void => {
-//         res.send(response);
-//       })
-//       .catch((err: string): void => {
-//         console.log(err);
-//         res.sendStatus(500);
-//       });
-//   }
-// );
+router.get('/', function (req, res, next) {
+    console.log('In GET on Owner router');
+    var queryString = "SELECT * FROM \"owners\"";
+    pool_1.default
+        .query(queryString)
+        .then(function (response) {
+        res.send(response.rows);
+    })
+        .catch(function (err) {
+        console.log(err);
+        res.sendStatus(500);
+    });
+});
 /**
  * POST ROUTE FOR ADDING OWENER TO DATABSE
  */

@@ -12,8 +12,21 @@ function* addOwner( action ) {
   }
 }
 
+function* getOwner( action ) {
+  console.log( 'In getOwnerSaga', action.type );
+  try {
+    const response = yield axios.get( '/api/owner' );
+
+    console.log( 'Got a response', response.data );
+    yield put({ type: 'SET_OWNER', payload: response.data });
+  } catch (error) {
+    console.error('Sample GET failed', error);
+  }
+}
+
 function* ownerSaga() {
-  yield takeLatest('ADD_OWNER', addOwner);
+  yield takeLatest( 'ADD_OWNER', addOwner );
+  yield takeLatest( 'GET_OWNER', getOwner );
 }
 
 export default ownerSaga;
