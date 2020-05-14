@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import './App.css';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import { connect } from 'react-redux';
+import OwnerForm from '../OwnerForm/OwnerForm';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 //Import Pages
 import HomePage from '../Pages/HomePage/HomePage';
 import ManagerOwnerPage from '../Pages/ManagerOwnerPage/ManagerOwnerPage';
+
 
 class App extends Component {
   componentDidMount() {
