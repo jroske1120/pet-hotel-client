@@ -25,6 +25,16 @@ router.get('/', function (req, res, next) {
  * POST route template
  */
 router.post('/', function (req, res, next) {
-    res.sendStatus(201);
+    console.log('userId:', req.body.userId);
+    var sqlText = "INSERT INTO \"pets\" (\"name\", \"breed\", \"color\") VALUES ($1, $2, $3)";
+    var queryText = [req.body.name, req.body.breed, req.body.color];
+    pool_1.default.
+        query(sqlText, queryText)
+        .then(function () {
+        res.sendStatus(200);
+    }).catch(function (error) {
+        console.log('drop_info query error:', error);
+        res.sendStatus(500);
+    }); // end post query
 });
 exports.default = router;
