@@ -5,5 +5,5 @@ import deletePetSaga from './deletePetSaga';
 import displaySaga from './displaySaga';
 
 export default function* rootSaga() {
-  yield all([ addPetInfo(), displaySaga(), deletePetSaga(), ownerSaga()]);
+  yield all([addPetInfo(), displaySaga(), deletePetSaga(), ownerSaga()]);
 };
