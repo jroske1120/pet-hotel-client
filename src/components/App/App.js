@@ -11,11 +11,6 @@ import ManagerOwnerPage from '../Pages/ManagerOwnerPage/ManagerOwnerPage';
 
 
 class App extends Component {
-  componentDidMount() {
-    this.props.dispatch({ type: 'GET_SAMPLE_API_CALL' });
-  }
-
-
   render() {
     return (
       <div className="App">
