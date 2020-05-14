@@ -10,12 +10,6 @@ var router = express_1.default.Router();
  * POST route template
  */
 router.post('/', function (req, res, next) {
-    res.sendStatus(201);
-});
-/**
- * DELETE ROUTE
- */
-router.post('/', function (req, res, next) {
     console.log('userId:', req.body.userId);
     var sqlText = "INSERT INTO \"pets\" (\"name\", \"breed\", \"color\") VALUES ($1, $2, $3)";
     var queryText = [req.body.name, req.body.breed, req.body.color];
@@ -28,6 +22,9 @@ router.post('/', function (req, res, next) {
         res.sendStatus(500);
     }); // end post query
 });
+/**
+ * DELETE ROUTE
+ */
 router.delete('/delete/:id', function (req, res, next) {
     console.log('in delete route');
     var pet_id = req.params.id;
