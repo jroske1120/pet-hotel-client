@@ -7,21 +7,6 @@ var express_1 = __importDefault(require("express"));
 var pool_1 = __importDefault(require("../modules/pool"));
 var router = express_1.default.Router();
 /**
- * GET route template
- */
-router.get('/', function (req, res, next) {
-    var queryString = "SELECT * FROM \"owners\"";
-    pool_1.default
-        .query(queryString)
-        .then(function (response) {
-        res.send(response);
-    })
-        .catch(function (err) {
-        console.log(err);
-        res.sendStatus(500);
-    });
-});
-/**
  * POST route template
  */
 router.post('/', function (req, res, next) {
