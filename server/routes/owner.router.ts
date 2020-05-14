@@ -11,7 +11,9 @@ router.get(
   '/',
   (req: Request, res: Response, next: express.NextFunction): void => {
     console.log( 'In GET on Owner router' );
-    const queryString: string = `SELECT * FROM "owners"`;
+    const queryString: string = `SELECT "owners"."id", "owners"."name", COUNT( "owners"."id" ) AS "pet_count" FROM "owners"
+                                JOIN "pets" ON "pets"."owner_id" = "owners"."id"
+                                GROUP BY "owners"."id";`;
 
     pool
       .query(queryString)

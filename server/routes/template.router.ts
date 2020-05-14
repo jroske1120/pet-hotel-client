@@ -6,16 +6,6 @@ const router: express.Router = express.Router();
 /**
  * POST route template
  */
-router.post(
-  '/',
-  (req: Request, res: Response, next: express.NextFunction): void => {
-    res.sendStatus(201);
-  }
-);
-
-/**
- * DELETE ROUTE
- */
 
 router.post(
   '/',
@@ -31,6 +21,10 @@ router.post(
             res.sendStatus(500);
         }); // end post query
 });
+
+/**
+ * DELETE ROUTE
+ */
 
 router.delete(
   '/delete/:id',
