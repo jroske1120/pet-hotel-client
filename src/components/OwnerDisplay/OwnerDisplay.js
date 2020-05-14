@@ -4,26 +4,39 @@ import './OwnerDisplay.css';
 
 class OwnerDisplay extends Component {
 
+    handleDelete = ( event, ownerId ) => {
+        console.log( 'Deleting owner with id:', ownerId );
+        this.props.dispatch( { type: 'DELETE_OWNER', payload: ownerId } );
+    }
+
   render() {
     return (
         <table id="owner-table">
-            <tr>
-                <th colSpan="3" id="table-title">
-                    Owner's
-                </th>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <th>Number of Pets</th>
-                <th>Actions</th>
-            </tr>
-            {this.props.owners.map( owner =>
-                    <tr id={owner.id}>
-                        <td>{owner.name}</td>
-                        <td>{owner.pet_count}</td>
-                        <td><button>Delete</button></td>
-                    </tr>
-            )}
+            <thead>
+                <tr>
+                    <th colSpan="3" id="table-title">
+                        Owner's
+                    </th>
+                </tr>
+                <tr>
+                    <th>Name</th>
+                    <th>Number of Pets</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {this.props.owners.map( owner =>
+                        <tr key={owner.id}>
+                            <td>{owner.name}</td>
+                            <td>{owner.pet_count}</td>
+                            <td>
+                                <button onClick={ (event) => this.handleDelete( event, owner.id ) }>
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+                )}
+            </tbody>
         </table>
     );
   }
