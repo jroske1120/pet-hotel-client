@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 
+//import individual components to be on this page
+import HistoryTableList from './HistoryTableList';
+
 class HistoryTable extends Component {
   render() {
     return (
@@ -16,6 +19,10 @@ class HistoryTable extends Component {
                     <th>Action</th>
                 </tr>
             </thead>
+            <HistoryTableList />
+            <tfoot>
+                <tr><td>Table Footer</td></tr>
+            </tfoot>
         </table>
       </div>
     )
