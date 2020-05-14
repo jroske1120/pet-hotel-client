@@ -34,4 +34,25 @@ router.post(
   }
 );
 
+/**
+ * DELETE ROUTE
+ */
+router.delete(
+  '/delete/:id',
+  (req: Request, res: Response, next: express.NextFunction): void => {
+    console.log('in delete route');
+    let pet_id: string = req.params.id;
+        console.log('speech id is', pet_id);
+
+        //Deletes a speech from the speech_info table
+        const queryText:string = `DELETE FROM pets WHERE id = $1;`;
+        pool.query(queryText,[pet_id]).then((result) => {
+                res.sendStatus(202);
+            }).catch( (error) => {
+                console.log(`Error on query ${error}`);
+                res.sendStatus(500);
+            });
+  }
+);
+
 export default router;

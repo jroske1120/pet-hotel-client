@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 
+//import components to be used on this page
+import deletePetButton from '../Buttons/DeletePetButton';
+import DeletePetButton from '../Buttons/DeletePetButton';
+
 class HistoryTableList extends Component {
   render() {
     return (
@@ -11,7 +15,7 @@ class HistoryTableList extends Component {
               <td>Shih-tzu</td>
               <td>Black</td>
               <td>No</td>
-              <td><button>Delete</button> | <button>Check In</button></td>
+              <td><DeletePetButton /> | <button>Check In</button></td>
           </tr>
       </tbody>
     )

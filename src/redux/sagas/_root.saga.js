@@ -1,10 +1,10 @@
 import { all } from 'redux-saga/effects';
 import sampleSaga from './sample.saga';
-import displaySaga from './displaySaga'
+import deletePetSaga from './deletePetSaga';
+import displaySaga from './displaySaga';
 
 export default function* rootSaga() {
-  yield all([sampleSaga(), displaySaga()]);
-
+  yield all([sampleSaga(), displaySaga(), deletePetSaga()]);
 }
 
 
