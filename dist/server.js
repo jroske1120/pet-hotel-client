@@ -6,12 +6,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = __importDefault(require("express"));
 var body_parser_1 = __importDefault(require("body-parser"));
 var template_router_1 = __importDefault(require("./routes/template.router"));
+var owner_router_1 = __importDefault(require("./routes/owner.router"));
+var display_router_1 = __importDefault(require("./routes/display.router"));
 var app = express_1.default();
 // Body parser middleware
 app.use(body_parser_1.default.json());
 app.use(body_parser_1.default.urlencoded({ extended: true }));
 /* Routes */
 app.use('/api/template', template_router_1.default);
+app.use('/api/owner', owner_router_1.default);
+app.use('/api/display', display_router_1.default);
 // Serve static files
 app.use(express_1.default.static('build'));
 // App Set //

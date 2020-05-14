@@ -7,21 +7,6 @@ var express_1 = __importDefault(require("express"));
 var pool_1 = __importDefault(require("../modules/pool"));
 var router = express_1.default.Router();
 /**
- * GET route template
- */
-router.get('/', function (req, res, next) {
-    var queryString = "SELECT * FROM \"owners\"";
-    pool_1.default
-        .query(queryString)
-        .then(function (response) {
-        res.send(response);
-    })
-        .catch(function (err) {
-        console.log(err);
-        res.sendStatus(500);
-    });
-});
-/**
  * POST route template
  */
 router.post('/', function (req, res, next) {
@@ -36,5 +21,21 @@ router.post('/', function (req, res, next) {
         console.log('drop_info query error:', error);
         res.sendStatus(500);
     }); // end post query
+});
+/**
+ * DELETE ROUTE
+ */
+router.delete('/delete/:id', function (req, res, next) {
+    console.log('in delete route');
+    var pet_id = req.params.id;
+    console.log('speech id is', pet_id);
+    //Deletes a speech from the speech_info table
+    var queryText = "DELETE FROM pets WHERE id = $1;";
+    pool_1.default.query(queryText, [pet_id]).then(function (result) {
+        res.sendStatus(202);
+    }).catch(function (error) {
+        console.log("Error on query " + error);
+        res.sendStatus(500);
+    });
 });
 exports.default = router;
