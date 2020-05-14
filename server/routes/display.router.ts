@@ -8,6 +8,7 @@ const router: express.Router = express.Router();
  * GET route template
  */
 router.get(
+
     '/',
     (req: Request, res: Response, next: express.NextFunction): void => {
         const queryString: string = `SELECT "owners"."name" as owners_name, "pets"."name" as pets_name, 
