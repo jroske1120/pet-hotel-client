@@ -11,7 +11,7 @@ var router = express_1.default.Router();
  */
 router.get('/', function (req, res, next) {
     console.log('In GET on Owner router');
-    var queryString = "SELECT * FROM \"owners\"";
+    var queryString = "SELECT \"owners\".\"id\", \"owners\".\"name\", COUNT( \"owners\".\"id\" ) AS \"pet_count\" FROM \"owners\"\n                                JOIN \"pets\" ON \"pets\".\"owner_id\" = \"owners\".\"id\"\n                                GROUP BY \"owners\".\"id\";";
     pool_1.default
         .query(queryString)
         .then(function (response) {
