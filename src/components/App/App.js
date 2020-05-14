@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import { connect } from 'react-redux';
+import OwnerForm from '../OwnerForm/OwnerForm';
 
 class App extends Component {
   componentDidMount() {
@@ -27,6 +28,7 @@ class App extends Component {
             Learn React
           </a>
         </header>
+        <OwnerForm />
       </div>
     );
   }
