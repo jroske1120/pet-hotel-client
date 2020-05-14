@@ -5,9 +5,7 @@ import DeletePetButton from '../Buttons/DeletePetButton';
 import { connect } from 'react-redux';
 
 class HistoryTableList extends Component {
-  componentDidMount() {
-    this.props.dispatch({ type: 'DISPLAY_ITEMS' });
-  }
+
   render() {
     return (
       // Needs a map here to go over each item
