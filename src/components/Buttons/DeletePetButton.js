@@ -6,7 +6,7 @@ class DeletePetButton extends Component {
   //Method for deleting a pet from the history table
   handleDelete = () => {
     //Sends dispatch to deletePetSaga
-    this.props.dispatch({type: 'DELETE_PET', payload: {pet_id: 1}});
+    this.props.dispatch({type: 'DELETE_PET', payload: {pet_id: this.props.pet_id}});
   }
 
   render() {

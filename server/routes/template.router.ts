@@ -44,5 +44,21 @@ router.delete(
   }
 );
 
+router.put(
+  '/checkin/:id',
+  (req: Request, res: Response, next: express.NextFunction): void => {
+    const pet_id: string = req.params.id;
+    const checked_in: boolean = req.body.checked_in;
+
+        const queryText:string = `UPDATE pets SET checked_in = $1 WHERE id = $2;`;
+        pool.query(queryText,[checked_in,pet_id]).then((result) => {
+          res.sendStatus(204);
+        }).catch( (error) => {
+          console.log(`Error on query ${error}`);
+          res.sendStatus(500);
+        });
+  }
+);
+
 
 export default router;

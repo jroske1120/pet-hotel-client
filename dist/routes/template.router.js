@@ -38,4 +38,15 @@ router.delete('/delete/:id', function (req, res, next) {
         res.sendStatus(500);
     });
 });
+router.put('/checkin/:id', function (req, res, next) {
+    var pet_id = req.params.id;
+    var checked_in = req.body.checked_in;
+    var queryText = "UPDATE pets SET checked_in = $1 WHERE id = $2;";
+    pool_1.default.query(queryText, [checked_in, pet_id]).then(function (result) {
+        res.sendStatus(204);
+    }).catch(function (error) {
+        console.log("Error on query " + error);
+        res.sendStatus(500);
+    });
+});
 exports.default = router;
