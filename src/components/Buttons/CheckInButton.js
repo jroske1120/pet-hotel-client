@@ -8,7 +8,7 @@ class CheckInButton extends Component {
   
   //Method for deleting a pet from the history table
   handleCheckIn = () => {
-    this.setState({check_in: !this.state.checked_in});
+    this.setState({checked_in: !this.state.checked_in});
     //Sends dispatch to deletePetSaga
     //this.props.dispatch({type: 'PUT_CHECK_IN', payload: {pet_id: 1, checked_in: this.state.check_in}});
     
@@ -16,9 +16,9 @@ class CheckInButton extends Component {
 
   //Conditional Render for whether or not the Pet is checked in based on check_in field
   checkInOrOut = () => {
-      if(this.state.check_in === true) {
+      if(this.state.checked_in) {
         return <button onClick={this.handleCheckIn}>Check Out</button>;
-      } else if (this.state.checked_in === false){
+      } else {
         return <button onClick={this.handleCheckIn}>Check In</button>;
       }
   }
