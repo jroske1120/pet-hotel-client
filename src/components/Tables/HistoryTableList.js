@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 //import components to be used on this page
 import DeletePetButton from '../Buttons/DeletePetButton';
+import CheckInButton from '../Buttons/CheckInButton';
 import { connect } from 'react-redux';
 
 class HistoryTableList extends Component {
@@ -9,20 +10,18 @@ class HistoryTableList extends Component {
   render() {
     return (
       // Needs a map here to go over each item
-      <div>
+      <tbody>
         {this.props.display.map(item =>
-          <tbody>
-            <tr>
+            <tr key={item.id}>
               <td>{item.owners_name}</td>
               <td>{item.pets_name}</td>
               <td>{item.breed}</td>
               <td>{item.color}</td>
               <td>true</td>
-              <td><DeletePetButton /> | <button>Check In</button></td>
+              <td><DeletePetButton /> | <CheckInButton /></td>
             </tr>
-          </tbody>
         )}
-      </div>
+        </tbody>
     )
   }
 }
