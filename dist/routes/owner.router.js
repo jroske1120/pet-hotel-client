@@ -11,7 +11,7 @@ var router = express_1.default.Router();
  */
 router.get('/', function (req, res, next) {
     console.log('In GET on Owner router');
-    var queryString = "SELECT \"owners\".\"id\", \"owners\".\"name\", COUNT( \"owners\".\"id\" ) AS \"pet_count\" FROM \"owners\"\n                                JOIN \"pets\" ON \"pets\".\"owner_id\" = \"owners\".\"id\"\n                                GROUP BY \"owners\".\"id\";";
+    var queryString = "SELECT \"owners\".\"id\", \"owners\".\"name\", COUNT(\"pets\".\"id\") AS \"pet_count\" FROM \"pets\"\n                                  FULL OUTER JOIN \"owners\" ON \"pets\".\"owner_id\" = \"owners\".\"id\"\n                                  GROUP BY \"owners\".\"id\"\n                                  ORDER BY \"name\";";
     pool_1.default
         .query(queryString)
         .then(function (response) {
@@ -39,4 +39,27 @@ router.post('/', function (req, res, next) {
         res.sendStatus(501);
     });
 }); // end POST ROUTE
+/**
+* DELETE ROUTE FOR DELETING OWNER FROM DATABSE
+*/
+router.delete('/:id', function (req, res, next) {
+    //   get owner id from req.params
+    console.log("Deleting owner with id", req.params.id);
+    var id = Number(req.params.id);
+    var queryTextOne = "DELETE FROM \"pets\" WHERE \"pets\".\"owner_id\" = $1";
+    var queryTextTwo = "DELETE FROM \"owners\" WHERE \"id\" = $1;";
+    pool_1.default.query(queryTextOne, [id])
+        .then(function (response) {
+        pool_1.default.query(queryTextTwo, [id])
+            .then(function (response) {
+            res.sendStatus(201);
+        })
+            .catch(function (error) {
+            console.log('Error deleting owner from database', error);
+        });
+    })
+        .catch(function (error) {
+        console.log('Error deleting owners pets from database', error);
+    });
+}); // end DELETE ROUTE
 exports.default = router;
