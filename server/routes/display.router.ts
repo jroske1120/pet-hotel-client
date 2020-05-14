@@ -16,6 +16,7 @@ router.get(
         pool
             .query(queryString)
             .then((response: any): void => {
+                console.log('display get:', response.rows);
                 res.send(response.rows);
                 console.log(response.rows);
 

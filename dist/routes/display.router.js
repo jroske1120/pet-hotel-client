@@ -14,6 +14,7 @@ router.get('/', function (req, res, next) {
     pool_1.default
         .query(queryString)
         .then(function (response) {
+        console.log('display get:', response.rows);
         res.send(response.rows);
         console.log(response.rows);
     })
