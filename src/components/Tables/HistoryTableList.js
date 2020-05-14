@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 
 //import components to be used on this page
-import deletePetButton from '../Buttons/DeletePetButton';
 import DeletePetButton from '../Buttons/DeletePetButton';
 
 class HistoryTableList extends Component {
