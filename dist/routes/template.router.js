@@ -10,9 +10,9 @@ var router = express_1.default.Router();
  * POST route template
  */
 router.post('/', function (req, res, next) {
-    console.log('userId:', req.body.userId);
-    var sqlText = "INSERT INTO \"pets\" (\"name\", \"breed\", \"color\") VALUES ($1, $2, $3)";
-    var queryText = [req.body.name, req.body.breed, req.body.color];
+    var sqlText = "INSERT INTO \"pets\" (\"name\", \"breed\", \"color\", \"owner_id\") VALUES ($1, $2, $3, $4)";
+    var queryText = [req.body.name, req.body.breed, req.body.color, req.body.owner_id];
+    console.log('user_id:', req.body.user_id);
     pool_1.default.
         query(sqlText, queryText)
         .then(function () {

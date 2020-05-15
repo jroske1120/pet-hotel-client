@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 class AddPetForm extends Component {
   state= {
     pet: {
+      owner_id: '',
       name: '',
       color: '',
       breed: '',
@@ -18,7 +19,6 @@ class AddPetForm extends Component {
             [propertyName]: event.target.value,
         }
     })
-    console.log('this.state.pet:', this.state.pet);
 };
 
 handleSubmit = (event) => {
@@ -30,6 +30,7 @@ handleSubmit = (event) => {
 };
 
   render() {
+
     return (
       <div>
         <h2>Add Pet</h2>
@@ -37,14 +38,25 @@ handleSubmit = (event) => {
           <input type="text" placeholder="Pet Name" onChange={(event) => this.handleChangeFor(event, 'name')} />
           <input type="text" placeholder="Pet Color" onChange={(event) => this.handleChangeFor(event, 'color')} />
           <input type="text" placeholder="Pet Breed" onChange={(event) => this.handleChangeFor(event, 'breed')} />
-          <select id="owners-name" name="owner-name">
-                <option value="owners-name">Owners Name</option>
+
+          <select id="owners-name" name="owner-name" onChange={(event) => this.handleChangeFor(event, 'owner_id')}>
+            <option value="">Owner Name</option>
+            {this.props.owners.map((item) => {
+              return(
+                  <option key={item.id} value={item.id} >{item.name}</option>
+              )
+            })
+            };
           </select>
           <input type="submit" value="Submit" onClick={this.handleSubmit}/>
         </form>
       </div>
     )
   }
-}
+};
 
-export default connect() (AddPetForm);
+const mapStoreToProps = (store) => ({
+  owners: store.setOwner
+});
+
+export default connect(mapStoreToProps) (AddPetForm);
