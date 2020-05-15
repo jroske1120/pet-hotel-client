@@ -27,6 +27,14 @@ class AddPetForm extends Component {
 
     // Send inputs to petInfo.saga
     this.props.dispatch({ type: 'ADD_PET', payload: this.state.pet });
+    this.setState({
+      pet: {
+        owner_id: '',
+        name: '',
+        color: '',
+        breed: ''
+      }
+    })
   };
 
   render() {
@@ -35,12 +43,29 @@ class AddPetForm extends Component {
       <div className="offEdge">
         <form>
           <h2>Add Pet</h2>
-          <input type="text" placeholder="Pet Name" onChange={(event) => this.handleChangeFor(event, 'name')} />
-          <input type="text" placeholder="Pet Color" onChange={(event) => this.handleChangeFor(event, 'color')} />
-          <input type="text" placeholder="Pet Breed" onChange={(event) => this.handleChangeFor(event, 'breed')} />
+          <input 
+            type="text" 
+            placeholder="Pet Name"
+            value={this.state.pet.name} 
+            onChange={(event) => this.handleChangeFor(event, 'name')} />
+          <input 
+            type="text" 
+            placeholder="Pet Color" 
+            value={this.state.pet.color} 
+            onChange={(event) => this.handleChangeFor(event, 'color')} />
+          <input 
+            type="text" 
+            placeholder="Pet Breed" 
+            value={this.state.pet.breed} 
+            onChange={(event) => this.handleChangeFor(event, 'breed')} />
 
-          <select id="owners-name" name="owner-name" onChange={(event) => this.handleChangeFor(event, 'owner_id')}>
-            <option value="">Owner Name</option>
+          <select 
+            id="owners-name" 
+            name="owner-name"
+            value={this.state.pet.owner_id}  
+            onChange={(event) => this.handleChangeFor(event, 'owner_id')}>
+
+          <option value="">Owner Name</option>
             {this.props.owners.map((item) => {
               return (
                 <option key={item.id} value={item.id} >{item.name}</option>
