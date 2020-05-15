@@ -2,7 +2,7 @@ import axios from 'axios';
 import { put, takeEvery } from 'redux-saga/effects';
 
 function* addPet(action) {
-    console.log('Posting data to database:', action.payload);
+    console.log('Posting pet info to db:', action.payload);
     try {
         yield axios.post(`/api/template/`, action.payload);
         yield put ({type: 'DISPLAY_ITEMS'})

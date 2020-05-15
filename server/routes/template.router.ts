@@ -9,9 +9,11 @@ const router: express.Router = express.Router();
 
 router.post(
   '/',
-  (req: Request, res: Response, next: express.NextFunction): void => {console.log('userId:', req.body.userId)
-  const sqlText = `INSERT INTO "pets" ("name", "breed", "color") VALUES ($1, $2, $3)`
-  const queryText = [req.body.name, req.body.breed, req.body.color];
+  (req: Request, res: Response, next: express.NextFunction): void => {
+  const sqlText = `INSERT INTO "pets" ("name", "breed", "color", "owner_id") VALUES ($1, $2, $3, $4)`
+  const queryText = [req.body.name, req.body.breed, req.body.color, req.body.owner_id];
+  console.log('user_id:', req.body.user_id)
+
       pool.
         query(sqlText, queryText)
         .then(() => {
