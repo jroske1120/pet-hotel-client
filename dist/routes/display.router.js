@@ -10,7 +10,7 @@ var router = express_1.default.Router();
  * GET route template
  */
 router.get('/', function (req, res, next) {
-    var queryString = "SELECT \"owners\".\"name\" as owners_name, \"pets\".\"name\" as pets_name, \n        \"breed\", \"color\", \"checked_in\", \"pets\".\"id\" FROM \"pets\" JOIN  \"owners\" ON \"pets\".\"owner_id\" = \"owners\".\"id\";";
+    var queryString = "SELECT \"owners\".\"name\" as owners_name, \"pets\".\"name\" as pets_name, \n        \"breed\", \"color\", \"checked_in\", \"pets\".\"id\" FROM \"pets\" JOIN  \"owners\" ON \"pets\".\"owner_id\" = \"owners\".\"id\"\n        ORDER BY owners_name, pets_name;";
     pool_1.default
         .query(queryString)
         .then(function (response) {

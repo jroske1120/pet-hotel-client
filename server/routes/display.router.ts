@@ -13,7 +13,8 @@ router.get(
     (req: Request, res: Response, next: express.NextFunction): void => {
 
         const queryString: string = `SELECT "owners"."name" as owners_name, "pets"."name" as pets_name, 
-        "breed", "color", "checked_in", "pets"."id" FROM "pets" JOIN  "owners" ON "pets"."owner_id" = "owners"."id";`;
+        "breed", "color", "checked_in", "pets"."id" FROM "pets" JOIN  "owners" ON "pets"."owner_id" = "owners"."id"
+        ORDER BY owners_name, pets_name;`;
 
         pool
             .query(queryString)
