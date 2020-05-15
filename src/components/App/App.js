@@ -20,7 +20,7 @@ class App extends Component {
     return (
       <div className="App">
         <header>
-          <h1>Twin Kitties Hotel</h1>
+          <img src={require('../App/images/TKH.jpg')} />
         </header>
         <Router>
           <nav>
