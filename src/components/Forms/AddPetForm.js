@@ -33,8 +33,8 @@ class AddPetForm extends Component {
 
     return (
       <div className="offEdge">
-        <h2>Add Pet</h2>
         <form>
+          <h2>Add Pet</h2>
           <input type="text" placeholder="Pet Name" onChange={(event) => this.handleChangeFor(event, 'name')} />
           <input type="text" placeholder="Pet Color" onChange={(event) => this.handleChangeFor(event, 'color')} />
           <input type="text" placeholder="Pet Breed" onChange={(event) => this.handleChangeFor(event, 'breed')} />
