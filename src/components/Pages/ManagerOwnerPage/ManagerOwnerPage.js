@@ -6,10 +6,6 @@ import OwnerDisplay from '../../OwnerDisplay/OwnerDisplay';
 
 class ManagerOwnerPage extends Component {
 
-  componentDidMount(){
-    this.props.dispatch( { type: 'GET_OWNER' } );
-  }; //end DidMount
-
   render() {
     return (
       <div>

@@ -11,6 +11,11 @@ import ManagerOwnerPage from '../Pages/ManagerOwnerPage/ManagerOwnerPage';
 
 
 class App extends Component {
+  componentDidMount() {
+    this.props.dispatch({ type: 'DISPLAY_ITEMS' });
+    this.props.dispatch( { type: 'GET_OWNER' } );
+  };
+  
   render() {
     return (
       <div className="App">

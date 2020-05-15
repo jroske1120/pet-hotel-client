@@ -5,7 +5,8 @@ function* addPet(action) {
     console.log('Posting pet info to db:', action.payload);
     try {
         yield axios.post(`/api/template/`, action.payload);
-        yield put ({type: 'DISPLAY_ITEMS'})
+        yield put ({type: 'DISPLAY_ITEMS'});
+        yield put({ type: 'GET_OWNER'});
     } catch (error) {
         console.log('Error with user info input:', error);
     }

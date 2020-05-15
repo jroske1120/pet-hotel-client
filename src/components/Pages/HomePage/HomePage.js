@@ -6,13 +6,8 @@ import AddPetForm from '../../Forms/AddPetForm';
 import HistoryTable from '../../Tables/HistoryTable';
 
 class HomePage extends Component {
-
-  componentDidMount() {
-    this.props.dispatch({ type: 'DISPLAY_ITEMS' });
-  };
   render() {
     return (
-
       <div>
         <h1>HOME Page</h1>
         <AddPetForm />

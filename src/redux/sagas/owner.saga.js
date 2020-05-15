@@ -6,7 +6,7 @@ function* addOwner( action ) {
   try {
     yield axios.post('/api/owner', action.payload );
 
-    // yield put({ type: 'SET_SAMPLE_RESPONSE', payload: response.data });
+    yield put({ type: 'GET_OWNER'});
   } catch (error) {
     console.error('Error adding owner', error);
   }
