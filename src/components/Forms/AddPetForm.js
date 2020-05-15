@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 
 class AddPetForm extends Component {
-  state= {
+  state = {
     pet: {
       owner_id: '',
       name: '',
@@ -14,25 +14,25 @@ class AddPetForm extends Component {
 
   handleChangeFor = (event, propertyName) => {
     this.setState({
-        pet: {
-            ...this.state.pet,
-            [propertyName]: event.target.value,
-        }
+      pet: {
+        ...this.state.pet,
+        [propertyName]: event.target.value,
+      }
     })
-};
+  };
 
-handleSubmit = (event) => {
-  event.preventDefault();
-  console.log('Dispatching info payload:', this.state.pet);
+  handleSubmit = (event) => {
+    event.preventDefault();
+    console.log('Dispatching info payload:', this.state.pet);
 
-  // Send inputs to petInfo.saga
-  this.props.dispatch({ type: 'ADD_PET', payload: this.state.pet });
-};
+    // Send inputs to petInfo.saga
+    this.props.dispatch({ type: 'ADD_PET', payload: this.state.pet });
+  };
 
   render() {
 
     return (
-      <div>
+      <div className="offEdge">
         <h2>Add Pet</h2>
         <form>
           <input type="text" placeholder="Pet Name" onChange={(event) => this.handleChangeFor(event, 'name')} />
@@ -42,13 +42,13 @@ handleSubmit = (event) => {
           <select id="owners-name" name="owner-name" onChange={(event) => this.handleChangeFor(event, 'owner_id')}>
             <option value="">Owner Name</option>
             {this.props.owners.map((item) => {
-              return(
-                  <option key={item.id} value={item.id} >{item.name}</option>
+              return (
+                <option key={item.id} value={item.id} >{item.name}</option>
               )
             })
             };
           </select>
-          <input type="submit" value="Submit" onClick={this.handleSubmit}/>
+          <input type="submit" value="Submit" onClick={this.handleSubmit} />
         </form>
       </div>
     )
@@ -59,4 +59,4 @@ const mapStoreToProps = (store) => ({
   owners: store.setOwner
 });
 
-export default connect(mapStoreToProps) (AddPetForm);
+export default connect(mapStoreToProps)(AddPetForm);
