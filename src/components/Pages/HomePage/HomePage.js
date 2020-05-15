@@ -9,7 +9,6 @@ class HomePage extends Component {
   render() {
     return (
       <div>
-        <h1>HOME Page</h1>
         <AddPetForm />
         <HistoryTable />
       </div>

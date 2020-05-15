@@ -13,14 +13,14 @@ import ManagerOwnerPage from '../Pages/ManagerOwnerPage/ManagerOwnerPage';
 class App extends Component {
   componentDidMount() {
     this.props.dispatch({ type: 'DISPLAY_ITEMS' });
-    this.props.dispatch( { type: 'GET_OWNER' } );
+    this.props.dispatch({ type: 'GET_OWNER' });
   };
-  
+
   render() {
     return (
       <div className="App">
         <header>
-          <h1>Pet Hotel</h1>
+          <h1>Twin Kitties Hotel</h1>
         </header>
         <Router>
           <nav>
@@ -29,12 +29,12 @@ class App extends Component {
               <li><Link to='/manager_owner'>Manager Owners</Link></li>
             </ul>
           </nav>
-          <Route exact path='/' component={HomePage}/>
-          <Route path='/manager_owner' component={ManagerOwnerPage}/>
+          <Route exact path='/' component={HomePage} />
+          <Route path='/manager_owner' component={ManagerOwnerPage} />
         </Router>
       </div>
-      );
-    }
+    );
   }
+}
 
 export default connect(mapStoreToProps)(App);
