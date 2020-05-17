@@ -35,7 +35,7 @@ else {
     var port = process.env.PORT_DB ? process.env.PORT_DB : 5432;
     var database = process.env.POSTGRES_DB
         ? process.env.POSTGRES_DB
-        : 'pet_hotel';
+        : process.env.DATABASE_NAME || 'pet_hotel';
     config = {
         host: host,
         // user,
