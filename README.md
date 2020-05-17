@@ -1,57 +1,57 @@
-# Pet Hotel Project
+# PROJECT NAME
+	#PET HOTEL PROJECT
 
-> NOTE: __Do not fork this repository.__ Instead, create your own repository from scratch.
+## Description
+_Duration: 3 Days_
 
-Trello Board: https://trello.com/b/1mJRBCmZ/pet-hotel-weekend-project
+The Pet Hotel Project is a web application that allows a person that owns a pet hotel to manage owners and their pets. They do this by simply creating an owner in the owner form then add pets to that owners name under the home page. The manager can then manage the pets that are checked into their hotel by clicking on the checkin and checkout button. If a person no longer uses the pet hotel a manager can remove the customer by clicking on the delete button.
 
-This Board has some tasks already defined, feel free to update as you see fit.
+To see the fully functional website, please visit: [DEPLOYED VERSION OF APP](https://shrouded-thicket-91600.herokuapp.com/#/)
 
-## Objectives
+## Collaborators
 
-- build a full-stack application, writing the backend in a new language
-- utilize separate GitHub repositories for the client-side and server-side of an application
-- build confidence w/ SQL statements for CRUD and 1-M joins
+## Screen Shot
+Example Base Mode Server Side Calculator
+![ ADD ENTRY PAGE | HOME PAGE](https://github.com/Jaden-Reklaw/pet_hotel_project/blob/master/img/ADD_PET.png "Example of the home page where the manager can add pets")
+Example Stretch Mode Server Side Calculator
+![ ADD ENTRY PAGE | OWNER PAGE](https://github.com/Jaden-Reklaw/pet_hotel_project/blob/master/img/ADD_OWNER.png "Example of the owners page where the manager can create owners")
 
-## Technology
+### Prerequisites
+- [Node.js](https://nodejs.org/en/)
+- [PostgreSQL](https://eggerapps.at/postico/)
 
-We are replacing our Node/Express/PG server with TypeScript. Your RESTful API server needs to be able to route requests, respond, and talk to our PostGRES database.
+## Database
 
-## Client Side
+Create a database in Postico called *pet_hotel* and run the SQL commands in the table_queries.sql.
 
-The client side should remain React, Redux, Redux Sagas as needed. 
+## Installation
+1. Clone repository or download zip folder.
+2. cd into correct directory from terminal
+3. Run npm install
+4. Run npm start and it should load in your default browser
+5. Follow the steps from the database section to create the correct database and tables
 
-## Features
+## Usage
+1. Manager can create owners on the owner's page
+2. Manager can add pets to that owner's name on the home page
+3. Manager can delete the owner than their pets will be removed from the hotel
+4. Remove a pet from the hotel if the owner does not have the pet anymore
+5. Manager can check the pet into and out of the hotel
+6. On the owner page you can see the count of how many pets an owner has
 
-- Add owners
-- Add pets
-- Remove owners if no pets are assigned
-- Remove pets
-- Check in / out a pet
-- Show total number of pet next to each owner
+## Built With
+- HTML
+- CSS
+- Javascript
+- Node.js
+- Express.js
+- PostgreSQL
+- React.js
+- React Redux
+- React Sagas
+- React Router
+- React Logger
+- TypeScript
 
-### Wireframes
-
-#### Dashboard View
-
-![Add Entry Page](page-one.png)
-
-#### Manage Owners View
-
-![Add Entry Page](page-two.png)
-
-### Database
-
-Start with two tables **pets** & **owners**. When base features are complete, add more tables as needed for stretch goals.
-
-## Documentation
-
-Before moving on past Base features, please take time to comment your code and otherwise document what you've learned about your new server side technology stack. This will be great when you come back and reference this project later.
-
-## Other Features
-
-- Update pets and owners
-- Add login for admin & customers (all above functionality should be admin focused)
-- Keep track of visits (you may need another table or two for this)
-  - Allow customers to see a history of visits for their pets
-  - Allow customers to add/remove pets from a profile page
-- Add images for pets
+## Acknowledgement
+Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality. Special shout out to my instructors Mary and Kris for helping become the programmer I always dreamed of and to my cohort at Prime Dijkstra!! Woot Woot, Help for Life!
