@@ -29,23 +29,13 @@ Create a database in Postico called *pet_hotel* and run the SQL commands in the 
 4. Run npm start and it should load in your default browser
 5. Follow the steps from the database section to create the correct database and tables
 
-## Features
-- Add owners
-- Add pets
-- Remove owners if no pets are assigned
-- Remove pets
-- Check in / out a pet
-- Show total number of pet next to each owner
-
 ## Usage
-1. Once application is running a person can simply enter inputs in the following fields:
-Task Name(name of task), Task Description(brief summary of task), Location(place the task is performed), and Date Due(when the task needs to be completed by). After the fields are completed then the user can hit enter and it will create the task.
-
-2. Edit and Update currently not working. Orignially I had a each field set to contenteditable which allow a user to edit all fields when ever with out having to click update and the list would be change with the new content.
-
-3.) Once a user is finished with a task they can simply click on scheduled button in order to show a green completed text to show they are done with a task.
-
-4.) If a user creates a task they don't want anymore or by accident they can simply click the x button that will remove the task from the list.
+1. Manager can create owners on the owner's page
+2. Manager can add pets to that owner's name on the home page
+3. Manager can delete the owner than their pets will be removed from the hotel
+4. Remove a pet from the hotel if the owner does not have the pet anymore
+5. Manager can check the pet into and out of the hotel
+6. On the owner page you can see the count of how many pets an owner has
 
 ## Built With
 - HTML
