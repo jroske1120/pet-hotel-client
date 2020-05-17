@@ -1,8 +1,8 @@
 -- CREATE DATABASE CALLED pet_hotel and run the following queries
 
 CREATE TABLE "owners" (
-    "id" serial PRIMARY KEY,
-    "name" VARCHAR(280)
+  "id" serial PRIMARY KEY,
+  "name" VARCHAR(280)
 );
 
 CREATE TABLE "pets" (
