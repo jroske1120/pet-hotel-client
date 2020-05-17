@@ -9,6 +9,10 @@ The Pet Hotel Project is a web application that allows a person that owns a pet 
 To see the fully functional website, please visit: [DEPLOYED VERSION OF APP](https://shrouded-thicket-91600.herokuapp.com/#/)
 
 ## Collaborators
+[Jordan Walker](https://github.com/Jaden-Reklaw)
+[Zach Battaglia](https://github.com/zbattaglia)
+[Mustafa Ibrahim](https://github.com/MustafaIbrahim4)
+[Max Faust](https://github.com/MaxFaust)
 
 ## Screen Shot
 Example Base Mode Server Side Calculator
