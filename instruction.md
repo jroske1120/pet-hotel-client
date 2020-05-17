@@ -10,9 +10,9 @@ To see the fully functional website, please visit: [DEPLOYED VERSION OF APP](htt
 
 ## Screen Shot
 Example Base Mode Server Side Calculator
-![ ADD ENTRY PAGE | HOME PAGE](https://github.com/Jaden-Reklaw/To-Do-List-App/blob/master/img/TODO_LIST_FORM.png "Example of the form to create a task")
+![ ADD ENTRY PAGE | HOME PAGE](https://github.com/Jaden-Reklaw/pet_hotel_project/blob/master/img/ADD_PET.png "Example of the home page where the manager can add pets")
 Example Stretch Mode Server Side Calculator
-![ ADD ENTRY PAGE | OWNER PAGE](https://github.com/Jaden-Reklaw/To-Do-List-App/blob/master/img/LIST_OF_TASKS.png "Example of the list that holds all the tasks")
+![ ADD ENTRY PAGE | OWNER PAGE](https://github.com/Jaden-Reklaw/pet_hotel_project/blob/master/img/ADD_OWNER.png "Example of the owners page where the manager can create owners")
 
 ### Prerequisites
 - [Node.js](https://nodejs.org/en/)
