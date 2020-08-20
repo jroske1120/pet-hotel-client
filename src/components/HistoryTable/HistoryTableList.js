@@ -17,8 +17,9 @@ class HistoryTableList extends Component {
               <td>{item.pets_name}</td>
               <td>{item.breed}</td>
               <td>{item.color}</td>
-              <td>{`${item.checked_in}`}</td>
-              <td><DeletePetButton pet_id={item.id}/> | <CheckInButton checked_in={item.checked_in} pet_id={item.id}/></td>
+              <td>{(item.checked_in === 'true') ? 'Yes' : 'No' }</td>
+              <td><CheckInButton checked_in={item.checked_in} pet_id={item.id}/></td>
+              <td><DeletePetButton pet_id={item.id}/></td>
             </tr>
         )}
         </tbody>

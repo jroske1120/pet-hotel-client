@@ -4,7 +4,7 @@ import { put, takeEvery } from 'redux-saga/effects';
 function* addPet(action) {
     console.log('Posting pet info to db:', action.payload);
     try {
-        yield axios.post(`/api/template/`, action.payload);
+        yield axios.post(`/api/pet/`, action.payload);
         yield put ({type: 'DISPLAY_ITEMS'});
         yield put({ type: 'GET_OWNER'});
     } catch (error) {

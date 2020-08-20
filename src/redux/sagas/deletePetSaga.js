@@ -5,7 +5,7 @@ function* deletePet(action) {
   try {
       console.log('in deletePet')
     //Delete the pet on a server delete request
-    yield axios.delete(`/api/template/delete/${action.payload.pet_id}`);
+    yield axios.delete(`/api/pet/${action.payload.pet_id}`);
     //Request information back from the server after change
     yield put({type: 'DISPLAY_ITEMS'});
   } catch (error) {

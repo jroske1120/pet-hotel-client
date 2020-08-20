@@ -5,7 +5,7 @@ function* displayItems() {
     try {
         console.log('in display saga');
 
-        const response = yield axios.get('/api/display');
+        const response = yield axios.get('/api/pet');
 
         console.log('put in display reducer,', response.data);
         yield put({ type: 'SET_DISPLAY', payload: response.data });

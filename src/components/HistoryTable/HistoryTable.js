@@ -15,8 +15,8 @@ class HistoryTable extends Component {
               <th>Pet Name</th>
               <th>Pet Breed</th>
               <th>Color</th>
-              <th>Checked In/Out</th>
-              <th>Action</th>
+              <th>Checked In</th>
+              <th colSpan={2}>Actions</th>
             </tr>
           </thead>
           <HistoryTableList />
