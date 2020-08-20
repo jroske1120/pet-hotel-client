@@ -1,7 +1,6 @@
 # PET HOTEL PROJECT - Front End
 
 ## Description
-_Duration: 3 Days_
 
 The Pet Hotel Project is a web application that allows a person that owns a pet hotel to manage owners and their pets. They do this by simply creating an owner in the owner form then add pets to that owners name under the home page. The manager can then manage the pets that are checked into their hotel by clicking on the checkin and checkout button. If a person no longer uses the pet hotel a manager can remove the customer by clicking on the delete button.
 
