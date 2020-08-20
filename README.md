@@ -23,7 +23,6 @@ The Pet Hotel Project is a web application that allows a person that owns a pet 
 2. cd into correct directory from terminal
 3. Run npm install
 4. Run npm start and it should load in your default browser
-5. Follow the steps from the database section to create the correct database and tables
 
 ## Usage
 1. Manager can create owners on the owner's page
